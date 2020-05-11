@@ -1,4 +1,4 @@
-from tests.TestAPIClient import Client
+from api.TestAPIClient import Client
 import unittest
 import json
 
@@ -9,7 +9,7 @@ class TestExampleAPIClient(unittest.TestCase):
 
     def test_authentication(self):
         client = Client()
-        response = client.connect(username='admin', password='Admin123')
+        response = client.connect(url='http://127.0.0.1:5000', username='admin', password='Admin123')
 
         self.assertTrue(response.status_code, 200)
         self.assertIsInstance(client.token, str)
@@ -17,17 +17,16 @@ class TestExampleAPIClient(unittest.TestCase):
 
     def test_on_get_static_and_dynamic_methods(self):
         client = Client()
-        client.connect(username='admin', password='Admin123')
+        client.connect(url='http://127.0.0.1:5000', username='admin', password='Admin123')
 
         req1 = client.get(method='lets_get_all_routers', PageSize=2, Offset=0)
         req2 = client.get_lets_get_all_routers(PageSize=2, Offset=0)
-        req3 = client.get_routers(PageSize=2, Offset=0)
 
         self.assertDictEqual(req1.json(), req2.json())
 
     def test_on_get_dynamic_methods(self):
         client = Client()
-        client.connect(username='admin', password='Admin123')
+        client.connect(url='http://127.0.0.1:5000', username='admin', password='Admin123')
 
         req1 = client.get(method='routers', PageSize=2, Offset=0)
         req2 = client.get_routers(PageSize=2, Offset=0)
@@ -36,7 +35,7 @@ class TestExampleAPIClient(unittest.TestCase):
 
     def test_getting_object(self):
         client = Client()
-        client.connect(username='admin', password='Admin123')
+        client.connect(url='http://127.0.0.1:5000', username='admin', password='Admin123')
 
         req = client.get(method='routers/12345')
 
@@ -46,7 +45,7 @@ class TestExampleAPIClient(unittest.TestCase):
         global device_id
 
         client = Client()
-        client.connect(username='admin', password='Admin123')
+        client.connect(url='http://127.0.0.1:5000', username='admin', password='Admin123')
 
         req = client.post(method='routers', data={'name': 'RT99', 'ip': '192.168.1.199'})
 
@@ -58,7 +57,7 @@ class TestExampleAPIClient(unittest.TestCase):
 
     def test_updating_object(self):
         client = Client()
-        client.connect(username='admin', password='Admin123')
+        client.connect(url='http://127.0.0.1:5000', username='admin', password='Admin123')
 
         req = client.put(method='routers/123456', data={'name': 'RT300', 'ip': '192.168.1.225'})
 
@@ -69,7 +68,7 @@ class TestExampleAPIClient(unittest.TestCase):
 
     def test_deleting_object(self):
         client = Client()
-        client.connect(username='admin', password='Admin123')
+        client.connect(url='http://127.0.0.1:5000', username='admin', password='Admin123')
 
         req = client.delete(method=f'routers/{device_id}')
 
@@ -81,7 +80,7 @@ class TestExampleAPIClient(unittest.TestCase):
 
     def test_getting_object_dynamic_method(self):
         client = Client()
-        client.connect(username='admin', password='Admin123')
+        client.connect(url='http://127.0.0.1:5000', username='admin', password='Admin123')
 
         req = client.get_routers_x('12345')
 
@@ -91,7 +90,7 @@ class TestExampleAPIClient(unittest.TestCase):
         global device_id
 
         client = Client()
-        client.connect(username='admin', password='Admin123')
+        client.connect(url='http://127.0.0.1:5000', username='admin', password='Admin123')
 
         req = client.post_routers(data={'name': 'RT99', 'ip': '192.168.1.199'})
 
@@ -103,7 +102,7 @@ class TestExampleAPIClient(unittest.TestCase):
 
     def test_updating_object_dynamic_method(self):
         client = Client()
-        client.connect(username='admin', password='Admin123')
+        client.connect(url='http://127.0.0.1:5000', username='admin', password='Admin123')
 
         req = client.put_routers_x('123456', data={'name': 'RT400', 'ip': '192.168.1.240'})
 
@@ -114,7 +113,7 @@ class TestExampleAPIClient(unittest.TestCase):
 
     def test_deleting_object_dynamic_method(self):
         client = Client()
-        client.connect(username='admin', password='Admin123')
+        client.connect(url='http://127.0.0.1:5000', username='admin', password='Admin123')
 
         req = client.delete_routers_x(device_id)
 

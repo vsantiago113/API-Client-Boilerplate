@@ -6,7 +6,7 @@ from abc import ABCMeta, abstractmethod
 
 
 class APIPlugin(metaclass=ABCMeta):
-    def __init__(self, verify=False, warnings=False, api_version='v1'):
+    def __init__(self, verify: bool = False, warnings: bool = False, api_version: [str, bytes] = 'v1'):
         """
         The APIPlugin is the foundation to creating API Plugins from many different vendors. The APIPlugin help you
         create the most dynamic API Wrapper possible with minimal coding in few different ways. The APIPlugin is design
@@ -39,9 +39,13 @@ class APIPlugin(metaclass=ABCMeta):
         pass
 
     @abstractmethod
-    def connect(self):
+    def connect(self, url: [str, None] = None, username: [str, bytes] = '',
+                password: [str, bytes] = '') -> requests.Response:
         """
         The way to connect to the API by authenticating and generating tokens.
+        :param url: The URL of the resource you are trying to access.
+        :param username: The username of the system you are trying to authenticate.
+        :param password: The password of the system you are trying to authenticate.
         :return:
         """
         pass
@@ -54,7 +58,7 @@ class APIPlugin(metaclass=ABCMeta):
         """
         pass
 
-    def get(self, url: str = None, method: str = '', data: dict = None, auth: HTTPBasicAuth = None,
+    def get(self, url: [str, None] = None, method: [str, bytes] = '', data: dict = None, auth: HTTPBasicAuth = None,
             **kwargs) -> requests.Response:
         """
 
@@ -70,7 +74,7 @@ class APIPlugin(metaclass=ABCMeta):
         return requests.request(http_method, url, headers=self.headers, verify=self.verify, json=data,
                                 auth=auth, params=kwargs)
 
-    def post(self, url: str = None, method: str = '', data: dict = None, auth: HTTPBasicAuth = None,
+    def post(self, url: [str, None] = None, method: [str, bytes] = '', data: dict = None, auth: HTTPBasicAuth = None,
              **kwargs) -> requests.Response:
         """
 
@@ -86,7 +90,7 @@ class APIPlugin(metaclass=ABCMeta):
         return requests.request(http_method, url, headers=self.headers, verify=self.verify, json=data,
                                 auth=auth, params=kwargs)
 
-    def put(self, url: str = None, method: str = '', data: dict = None, auth: HTTPBasicAuth = None,
+    def put(self, url: [str, None] = None, method: [str, bytes] = '', data: dict = None, auth: HTTPBasicAuth = None,
             **kwargs) -> requests.Response:
         """
 
@@ -102,7 +106,7 @@ class APIPlugin(metaclass=ABCMeta):
         return requests.request(http_method, url, headers=self.headers, verify=self.verify, json=data,
                                 auth=auth, params=kwargs)
 
-    def delete(self, url: str = None, method: str = '', data: dict = None, auth: HTTPBasicAuth = None,
+    def delete(self, url: [str, None] = None, method: [str, bytes] = '', data: dict = None, auth: HTTPBasicAuth = None,
                **kwargs) -> requests.Response:
         """
 
@@ -118,9 +122,9 @@ class APIPlugin(metaclass=ABCMeta):
         return requests.request(http_method, url, headers=self.headers, verify=self.verify, json=data,
                                 auth=auth, params=kwargs)
 
-    def get_method1_x(self, *args, url: str = None, data: dict = None,
-                      auth: HTTPBasicAuth = None, placeholder='x', split_method: [str, None] = '_',
-                      **kwargs) -> requests.Response:
+    def get_method1_x(self, *args, url: [str, None] = None, data: dict = None,
+                      auth: HTTPBasicAuth = None, placeholder: [str, bytes] = 'x',
+                      split_method: [str, bytes, None] = '_', **kwargs) -> requests.Response:
         """
 
         :param args: The arguments are specific URL methods withing the method for example device_id or UUID fields.
