@@ -7,14 +7,14 @@ https://github.com/vsantiago113/RESTful-API-Boilerplate
 
 ### Import and instantiate the class
 ```python
-from api.TestAPIClient import Client
+from api.TestAPIWrapper import Client
 
 client = Client(verify=False, warnings=False, api_version='v1')
 ```
 
 ### Connect and Disconnect
 ```python
-from api.TestAPIClient import Client
+from api.TestAPIWrapper import Client
 
 client = Client(verify=False, warnings=False, api_version='v1')
 
@@ -25,7 +25,7 @@ client.disconnect()
 
 ### HTTP GET all records
 ```python
-from api.TestAPIClient import Client
+from api.TestAPIWrapper import Client
 import json
 
 client = Client(verify=False, warnings=False, api_version='v1')
@@ -43,7 +43,7 @@ client.disconnect()
 
 ### HTTP GET a single record
 ```python
-from api.TestAPIClient import Client
+from api.TestAPIWrapper import Client
 import json
 
 client = Client(verify=False, warnings=False, api_version='v1')
@@ -61,7 +61,7 @@ client.disconnect()
 
 ### HTTP POST
 ```python
-from api.TestAPIClient import Client
+from api.TestAPIWrapper import Client
 import json
 
 client = Client(verify=False, warnings=False, api_version='v1')
@@ -79,7 +79,7 @@ client.disconnect()
 
 ### HTTP PUT
 ```python
-from api.TestAPIClient import Client
+from api.TestAPIWrapper import Client
 import json
 
 client = Client(verify=False, warnings=False, api_version='v1')
@@ -97,7 +97,7 @@ client.disconnect()
 
 ### HTTP DELETE
 ```python
-from api.TestAPIClient import Client
+from api.TestAPIWrapper import Client
 import json
 
 client = Client(verify=False, warnings=False, api_version='v1')
@@ -117,7 +117,7 @@ client.disconnect()
 
 #### HTTP GET all records
 ```python
-from api.TestAPIClient import Client
+from api.TestAPIWrapper import Client
 import json
 
 client = Client(verify=False, warnings=False, api_version='v1')
@@ -135,7 +135,7 @@ client.disconnect()
 
 #### HTTP GET a single record
 ```python
-from api.TestAPIClient import Client
+from api.TestAPIWrapper import Client
 import json
 
 client = Client(verify=False, warnings=False, api_version='v1')

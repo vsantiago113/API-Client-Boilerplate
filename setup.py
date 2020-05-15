@@ -1,14 +1,14 @@
 from distutils.core import setup
 
-setup(name='API-Client-Plugin-Boilerplate',
+setup(name='API-Wrapper-Boilerplate',
       version='0.0.1',
-      description='A flexible and simple API Client Boilerplate to use it to build other API Clients that use RESTful.',
+      description='An API Wrapper Boilerplate to build API Wrappers that use RESTful in a standard way.',
       author='Victor M Santiago',
       author_email='vsantiago113sec@gmail.com',
       url='https://github.com/vsantiago113',
-      download_url='https://github.com/vsantiago113/API-Client-Plugin-Boilerplate',
+      download_url='https://github.com/vsantiago113/API-Wrapper-Boilerplate',
       license='MIT',
-      packages=['API-Client-Plugin-Boilerplate'],
+      packages=['API-Wrapper-Boilerplate'],
       classifiers=[
           'Development Status :: 5 - Production/Stable',
           'Topic :: Utilities',
