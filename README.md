@@ -17,14 +17,14 @@ https://github.com/vsantiago113/RESTful-API-Boilerplate
 
 ## Usage
 
-### Import and instantiate the class
+#### Import and instantiate the class
 ```python
 from api.TestAPIWrapper import Client
 
 client = Client(verify=False, warnings=False, api_version='v1')
 ```
 
-### Connect and Disconnect
+#### Connect and Disconnect
 ```python
 from api.TestAPIWrapper import Client
 
@@ -35,7 +35,7 @@ client.connect(url='http://127.0.0.1:5000', username='admin', password='Admin123
 client.disconnect()
 ```
 
-### HTTP GET all records
+#### HTTP GET all records
 ```python
 from api.TestAPIWrapper import Client
 import json
@@ -53,7 +53,7 @@ else:
 client.disconnect()
 ```
 
-### HTTP GET a single record
+#### HTTP GET a single record
 ```python
 from api.TestAPIWrapper import Client
 import json
@@ -71,7 +71,7 @@ else:
 client.disconnect()
 ```
 
-### HTTP POST
+#### HTTP POST
 ```python
 from api.TestAPIWrapper import Client
 import json
@@ -89,7 +89,7 @@ else:
 client.disconnect()
 ```
 
-### HTTP PUT
+#### HTTP PUT
 ```python
 from api.TestAPIWrapper import Client
 import json
@@ -107,7 +107,7 @@ else:
 client.disconnect()
 ```
 
-### HTTP DELETE
+#### HTTP DELETE
 ```python
 from api.TestAPIWrapper import Client
 import json
