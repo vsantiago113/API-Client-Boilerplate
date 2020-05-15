@@ -15,6 +15,8 @@ https://github.com/vsantiago113/RESTful-API-Boilerplate
 
 ---
 
+## Usage
+
 ### Import and instantiate the class
 ```python
 from api.TestAPIWrapper import Client
