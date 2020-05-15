@@ -3,6 +3,7 @@
 This project help you create standardize RESTful API wrappers so you can create a collection of all the API's you use everyday and using them all the same or very similar way.
 
 ### How to install
+NOTE: this is just an example this module is not published in PyPi
 ```python
 $ pip install APIWrapperBoilerplate
 ```
