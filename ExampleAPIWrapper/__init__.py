@@ -1,10 +1,10 @@
-from api import APIPlugin
+from ExampleAPIWrapper.api_interface import APIPlugin
 import requests
 from requests.auth import HTTPBasicAuth
 import inspect
 
 
-class Client(APIPlugin):
+class Wrapper(APIPlugin):
     headers = None
     base_url = None
     token = None

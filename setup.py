@@ -1,11 +1,16 @@
 from distutils.core import setup
 
+with open('README.md', 'r') as f:
+    long_description = f.read()
+
 setup(
     name='API-Wrapper-Boilerplate',
     packages=['API-Wrapper-Boilerplate'],
     version='0.0.1',
     license='MIT',
     description='An API Wrapper Boilerplate to build API Wrappers that use RESTful in a standard way.',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     author='Victor M Santiago',
     author_email='vsantiago113sec@gmail.com',
     url='https://github.com/vsantiago113',
