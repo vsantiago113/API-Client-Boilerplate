@@ -1,11 +1,11 @@
-# API-Wrapper-Boilerplate
+# API-Client-Boilerplate
 
 This project help you create standardize RESTful API wrappers so you can create a collection of all the API's you use everyday and using them all the same or very similar way.
 
 ### How to install
 NOTE: this is just an example this module is not published in PyPi
 ```ignorelang
-$ pip install ExampleAPIWrapper
+$ pip install ExampleAPIClient
 ```
 
 ---
@@ -19,16 +19,16 @@ https://github.com/vsantiago113/RESTful-API-Boilerplate
 
 #### Import and instantiate the class
 ```python
-from ExampleAPIWrapper import Wrapper
+from ExampleAPIClient import Client
 
-client = Wrapper(verify=False, warnings=False, api_version='v1')
+client = Client(verify=False, warnings=False, api_version='v1')
 ```
 
 #### Connect and Disconnect
 ```python
-from ExampleAPIWrapper import Wrapper
+from ExampleAPIClient import Client
 
-client = Wrapper(verify=False, warnings=False, api_version='v1')
+client = Client(verify=False, warnings=False, api_version='v1')
 
 client.connect(url='http://127.0.0.1:5000', username='admin', password='Admin123')
 
@@ -37,10 +37,10 @@ client.disconnect()
 
 #### HTTP GET all records
 ```python
-from ExampleAPIWrapper import Wrapper
+from ExampleAPIClient import Client
 import json
 
-client = Wrapper(verify=False, warnings=False, api_version='v1')
+client = Client(verify=False, warnings=False, api_version='v1')
 
 client.connect(url='http://127.0.0.1:5000', username='admin', password='Admin123')
 
@@ -55,10 +55,10 @@ client.disconnect()
 
 #### HTTP GET a single record
 ```python
-from ExampleAPIWrapper import Wrapper
+from ExampleAPIClient import Client
 import json
 
-client = Wrapper(verify=False, warnings=False, api_version='v1')
+client = Client(verify=False, warnings=False, api_version='v1')
 
 client.connect(url='http://127.0.0.1:5000', username='admin', password='Admin123')
 
@@ -73,10 +73,10 @@ client.disconnect()
 
 #### HTTP POST
 ```python
-from ExampleAPIWrapper import Wrapper
+from ExampleAPIClient import Client
 import json
 
-client = Wrapper(verify=False, warnings=False, api_version='v1')
+client = Client(verify=False, warnings=False, api_version='v1')
 
 client.connect(url='http://127.0.0.1:5000', username='admin', password='Admin123')
 
@@ -91,10 +91,10 @@ client.disconnect()
 
 #### HTTP PUT
 ```python
-from ExampleAPIWrapper import Wrapper
+from ExampleAPIClient import Client
 import json
 
-client = Wrapper(verify=False, warnings=False, api_version='v1')
+client = Client(verify=False, warnings=False, api_version='v1')
 
 client.connect(url='http://127.0.0.1:5000', username='admin', password='Admin123')
 
@@ -109,10 +109,10 @@ client.disconnect()
 
 #### HTTP DELETE
 ```python
-from ExampleAPIWrapper import Wrapper
+from ExampleAPIClient import Client
 import json
 
-client = Wrapper(verify=False, warnings=False, api_version='v1')
+client = Client(verify=False, warnings=False, api_version='v1')
 
 client.connect(url='http://127.0.0.1:5000', username='admin', password='Admin123')
 
@@ -129,10 +129,10 @@ client.disconnect()
 
 #### HTTP GET all records
 ```python
-from ExampleAPIWrapper import Wrapper
+from ExampleAPIClient import Client
 import json
 
-client = Wrapper(verify=False, warnings=False, api_version='v1')
+client = Client(verify=False, warnings=False, api_version='v1')
 
 client.connect(url='http://127.0.0.1:5000', username='admin', password='Admin123')
 
@@ -147,10 +147,10 @@ client.disconnect()
 
 #### HTTP GET a single record
 ```python
-from ExampleAPIWrapper import Wrapper
+from ExampleAPIClient import Client
 import json
 
-client = Wrapper(verify=False, warnings=False, api_version='v1')
+client = Client(verify=False, warnings=False, api_version='v1')
 
 client.connect(url='http://127.0.0.1:5000', username='admin', password='Admin123')
 
