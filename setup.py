@@ -13,8 +13,8 @@ setup(
     long_description_content_type='text/markdown',
     author='Victor M Santiago',
     author_email='vsantiago113sec@gmail.com',
-    url='https://github.com/vsantiago113',
-    download_url='https://github.com/vsantiago113/API-Client-Boilerplate',
+    url='https://github.com/vsantiago113/API-Client-Boilerplate',
+    download_url='',
     keywords=['RESTful', 'Client', 'API', 'Boilerplate'],
     python_requires='>=3.4.0',
     install_requires=[
