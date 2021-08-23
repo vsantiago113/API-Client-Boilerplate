@@ -1,14 +1,24 @@
-from setuptools import setup
+"""
+This setup.py file requires "git" because it uses "git" to find the latest tag for the project
+the repo name and url.
+"""
+
 import subprocess
 import os
+from setuptools import setup
 
 # Find Latest Git Tag Available
-latest_git_tag_available = subprocess.check_output(['git', 'describe', '--tags']).decode('utf-8').strip()
-assert '.' in latest_git_tag_available
+LATEST_GIT_TAG_AVAILABLE = subprocess.check_output(['git',
+                                                    'describe',
+                                                    '--tags']).decode('utf-8').strip()
+assert '.' in LATEST_GIT_TAG_AVAILABLE
 
-get_origin_url = subprocess.check_output(['git', 'config', '--get', 'remote.origin.url']).decode('utf-8').strip()
-assert 'http' in get_origin_url
-get_repo_name = get_origin_url.split('/')[-1].rstrip('.git')
+GET_ORIGIN_URL = subprocess.check_output(['git',
+                                          'config',
+                                          '--get',
+                                          'remote.origin.url']).decode('utf-8').strip()
+assert 'http' in GET_ORIGIN_URL
+get_repo_name = GET_ORIGIN_URL.split('/', maxsplit=1)[-1].rstrip('.git')
 
 assert os.path.isfile('requirements.txt')
 with open('requirements.txt', 'r') as f:
@@ -23,15 +33,16 @@ with open('README.md', 'r', encoding='utf-8') as f:
 setup(
     name=get_repo_name,
     packages=[get_repo_name],
-    version=latest_git_tag_available,
+    version=LATEST_GIT_TAG_AVAILABLE,
     license='MIT',
     description='A boilerplate to build API clients or wrappers.',
     long_description=long_description,
     long_description_content_type='text/markdown',
     author='Victor M Santiago',
     author_email='vsantiago113sec@gmail.com',
-    url=get_origin_url.rstrip('.git'),
-    download_url='{}/archive/{}.tar.gz'.format(get_origin_url.rstrip('.git'), latest_git_tag_available),
+    url=GET_ORIGIN_URL.rstrip('.git'),
+    download_url='{}/archive/{}.tar.gz'.format(GET_ORIGIN_URL.rstrip('.git'),
+                                               LATEST_GIT_TAG_AVAILABLE),
     keywords=['RESTful', 'Client', 'API', 'Boilerplate'],
     python_requires='>=3.6.0',
     install_requires=requirements,
