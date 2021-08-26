@@ -21,13 +21,13 @@ assert 'http' in GET_ORIGIN_URL
 get_repo_name = GET_ORIGIN_URL.split('/', maxsplit=1)[-1].rstrip('.git')
 
 assert os.path.isfile('requirements.txt')
-with open('requirements.txt', 'r') as f:
+with open('requirements.txt', 'r', encoding='utf-8', errors='ignore') as f:
     requirements = []
     for i in f.readlines():
         if i:
             requirements.append(i.rstrip())
 
-with open('README.md', 'r', encoding='utf-8') as f:
+with open('README.md', 'r', encoding='utf-8', errors='ignore') as f:
     long_description = f.read()
 
 setup(
