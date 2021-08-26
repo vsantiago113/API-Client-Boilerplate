@@ -10,11 +10,6 @@ $ pip install ExampleAPIClient
 
 ---
 
-Requirements for Testing
-https://github.com/vsantiago113/RESTful-API-Boilerplate
-
----
-
 ## Usage
 
 #### Import and instantiate the class
