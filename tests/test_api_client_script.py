@@ -3,7 +3,7 @@ Unittest file to check the code.
 """
 
 import unittest
-from ExampleAPIClient import Client
+from example_api_client import Client
 
 DEVICE_ID = None
 
